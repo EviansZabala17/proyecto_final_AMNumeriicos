@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proyecto Métodos Numéricos - Interpolación & Regresión</title>
+  <link rel="stylesheet" href="bootstrap.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="bg-dark text-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black shadow">
+    <a class="navbar-brand" href="#"><img src="img/logo.jpg" alt="Logo" width="30" height="30" class="logo pe-2"/>Proyecto Métodos Numéricos</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#ej1">Ejercicio 1</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ej2">Ejercicio 2</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ej3">Ejercicio 3</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="container text-center mt-4">
+    <h1 class="display-5">Interpolación en la Vida Real</h1>
+    <p class="lead">Métodos: Newton · Lagrange · Splines · Regresión Lineal</p>
+  </header>
+
+  <main class="container my-5">
+
+    <!-- Ejercicio 1 -->
+    <section id="ej1" class="mb-5">
+  <h2>🍰 1. Temperatura durante el horneado del pastel</h2>
+  <div class="row align-items-center">
+    <div class="col-md-4 text-center">
+      <img src="img/pastel.jpg" class="img-fluid rounded shadow" alt="Pastel"/>
+    </div>
+    <div class="col-md-8">
+      <p><em>¿Qué temperatura había a los 12 minutos?</em></p>
+      <form onsubmit="resolverEjercicio(1); return false;">
+        <div class="mb-3">
+          <label for="xi1" class="form-label">Tiempo (min)</label>
+          <input type="number" step="0.1" class="form-control" id="xi1" value="12"/>
+        </div>
+        <button class="btn btn-primary">Calcular</button>
+      </form>
+      <div id="salida1" class="mt-3"></div>
+    </div>
+  </div>
+  <canvas id="graf1"></canvas>
+</section>
+
+
+    <!-- Ejercicio 2 -->
+    <section id="ej2" class="mb-5">
+  <h2>🕊️ 2. Vuelo de gaviota sobre la costa</h2>
+  <div class="row align-items-center">
+    <div class="col-md-4 text-center">
+      <img src="img/gaviota.jpg" class="img-fluid rounded shadow" alt="Gaviota"/>
+    </div>
+    <div class="col-md-8">
+      <p><em>Altura estimada en t = 7 s (o t = 10 s)</em></p>
+      <form onsubmit="resolverEjercicio(2); return false;">
+        <div class="mb-3">
+          <label for="xi2" class="form-label">Tiempo (s)</label>
+          <input type="number" step="0.1" class="form-control" id="xi2" value="7"/>
+        </div>
+        <button class="btn btn-success">Calcular</button>
+      </form>
+      <div id="salida2" class="mt-3"></div>
+    </div>
+  </div>
+  <canvas id="graf2"></canvas>
+</section>
+
+
+    <!-- Ejercicio 3 -->
+    <section id="ej3" class="mb-5">
+  <h2>⛽ 3. Estimación del precio del combustible</h2>
+  <div class="row align-items-center">
+    <div class="col-md-4 text-center">
+      <img src="img/gasolina.jpg" class="img-fluid rounded shadow" alt="Combustible"/>
+    </div>
+    <div class="col-md-8">
+      <p><em>Precio estimado en el Día 3.5</em></p>
+      <form onsubmit="resolverEjercicio(3); return false;">
+        <div class="mb-3">
+          <label for="xi3" class="form-label">Día</label>
+          <input type="number" step="0.1" class="form-control" id="xi3" value="3.5"/>
+        </div>
+        <button class="btn btn-warning">Calcular</button>
+      </form>
+      <div id="salida3" class="mt-3"></div>
+    </div>
+  </div>
+  <canvas id="graf3"></canvas>
+</section>
+<section id="conclusion" class="bg-dark text-white p-4 rounded shadow mb-5">
+  <h2 class="text-center mb-4">Conclusión General</h2>
+  <p>
+    A través de estos tres ejercicios de aplicación real, se ha demostrado cómo los métodos de interpolación y regresión permiten estimar valores desconocidos con gran precisión a partir de datos discretos. 
+  </p>
+  <p>
+    En el caso del horneado del pastel, los métodos proporcionaron una estimación precisa de la temperatura en un instante intermedio, lo cual es útil en control de procesos industriales. 
+    Para el vuelo de la gaviota, se observaron diferencias notables entre los métodos, resaltando que la elección del método debe considerar la naturaleza del comportamiento de los datos (oscilante o tendencial). 
+    Finalmente, en la estimación del precio de la gasolina, la regresión lineal mostró ser una herramienta eficaz debido a la tendencia creciente de los valores.
+  </p>
+  <p>
+    Cada método tiene fortalezas específicas: Newton y Lagrange destacan en rapidez con pocos puntos, los Splines suavizan mejor los datos, y la regresión lineal es ideal para identificar tendencias. 
+    Por ello, el análisis numérico no solo permite resolver problemas con datos incompletos, sino también seleccionar el modelo más adecuado según el contexto.
+  </p>
+</section>
+
+
+
+  </main>
+
+  <footer class="text-center mb-4">
+    <p> 2025 - Página creada de Evi Zabala (EZ)</p>
+  </footer>
+
+  <script src="chart.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
